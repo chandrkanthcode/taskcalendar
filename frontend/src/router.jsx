@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-
+import DashboardLayout from "./layouts/DashboardLayout";
 import Dashboard from "./pages/Dashboard.jsx";
 import Tasks from "./pages/Tasks.jsx";
 import Calendar from "./pages/Calendar.jsx";
