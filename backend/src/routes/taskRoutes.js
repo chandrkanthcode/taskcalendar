@@ -13,4 +13,16 @@ router.post("/", async (req, res) => {
   res.status(201).json(task);
 });
 
+/*
+ @route   PUT /api/tasks/:id
+ @desc    Update a task by ID
+ @access  Private
+*/
+router.put("/:id", updateTask);
+/*
+ @route   DELETE /api/tasks/:id
+ @desc    Delete a task by ID
+ @access  Private
+*/
+router.delete("/:id", deleteTask);
 export default router;
