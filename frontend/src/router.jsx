@@ -13,3 +13,4 @@ export const router = createBrowserRouter([
   { path: "/analytics", element: <Analytics /> },
   { path: "*", element: <NotFound /> },
 ]);
+
