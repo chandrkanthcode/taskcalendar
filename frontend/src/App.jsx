@@ -1,10 +1,22 @@
-import { RouterProvider } from "react-router-dom";
-import { router } from "./router";
+import { Routes, Route, Link } from "react-router-dom";
+import Tasks from "./pages/Tasks";
 
-export default function App() {
+function App() {
   return (
-    <div className="p-10 text-2xl text-blue-600">
-      Task Manager App Running 🚀
+    <div style={{ padding: "20px" }}>
+      <h1>Task Manager App Running 🚀</h1>
+
+      <nav style={{ marginBottom: "20px" }}>
+        <Link to="/">Home</Link> |{" "}
+        <Link to="/tasks">Tasks</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<div>Home Page</div>} />
+        <Route path="/tasks" element={<Tasks />} />
+      </Routes>
     </div>
   );
 }
+
+export default App;

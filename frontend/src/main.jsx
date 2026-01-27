@@ -1,18 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { BrowserRouter } from "react-router-dom";
 import App from './App'
 import './styles/tailwind.css'
 import { TaskProvider } from "./context/TaskContext";
 
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+root.render(
+  <BrowserRouter>
     <App />
-  </React.StrictMode>
-)
-
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <TaskProvider>
-    <App />
-  </TaskProvider>
+  </BrowserRouter>
 );
