@@ -1,8 +1,8 @@
 import Task from "../models/Task.js";
 
-/* =========================
+/* 
    GET /api/tasks
-========================= */
+ */
 export const getTasks = async (req, res) => {
   try {
     const tasks = await Task.find();
@@ -12,21 +12,27 @@ export const getTasks = async (req, res) => {
   }
 };
 
-/* =========================
+/* 
    POST /api/tasks
-========================= */
+ */
 export const createTask = async (req, res) => {
   try {
+    console.log("REQ BODY:", req.body); // 👈 ADD
     const task = await Task.create(req.body);
     res.status(201).json(task);
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    console.error("CREATE TASK ERROR:", error); // 👈 ADD
+    res.status(400).json({
+      message: error.message,
+      errors: error.errors,
+    });
   }
 };
 
-/* =========================
+
+/* 
    PUT /api/tasks/:id
-========================= */
+ */
 export const updateTask = async (req, res) => {
   try {
     const updatedTask = await Task.findByIdAndUpdate(
@@ -45,9 +51,9 @@ export const updateTask = async (req, res) => {
   }
 };
 
-/* =========================
+/* 
    DELETE /api/tasks/:id
-========================= */
+ */
 export const deleteTask = async (req, res) => {
   try {
     const task = await Task.findByIdAndDelete(req.params.id);

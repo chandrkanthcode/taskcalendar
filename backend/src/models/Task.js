@@ -4,10 +4,11 @@ const taskSchema = new mongoose.Schema(
   {
     /* USER RELATION */
     userId: {
-      type: String, // Auth0 user ID
-      required: true,
+      type: String,
+      required: false, // 👈 TEMP FIX
       index: true,
     },
+
 
     /*  CORE DETAILS */
     title: {
