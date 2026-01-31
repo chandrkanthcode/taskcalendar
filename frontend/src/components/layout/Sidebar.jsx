@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
@@ -10,6 +11,12 @@ const Sidebar = () => {
         <NavLink to="/tasks" className="block hover:text-blue-400">
           Tasks
         </NavLink>
+        <Link
+          to="/calendar"
+          className="block px-4 py-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
+        >
+          📅 Calendar
+        </Link>
       </nav>
     </aside>
   );
