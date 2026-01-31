@@ -7,9 +7,9 @@ import interactionPlugin from "@fullcalendar/interaction";
 const Calendar = () => {
   const [events, setEvents] = useState([]);
 
-  // 🔹 Fetch tasks from backend
+  // Fetch tasks from backend
   useEffect(() => {
-    fetch("http://localhost:5002/api/tasks") // adjust if using /api/tasks
+    fetch("http://localhost:5002/api/tasks")
       .then((res) => res.json())
       .then((tasks) => {
         const mappedEvents = tasks.map((task) => ({
